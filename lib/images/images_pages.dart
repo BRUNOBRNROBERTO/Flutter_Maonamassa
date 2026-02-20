@@ -5,6 +5,11 @@ class ImagesPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Images')));
+    return Scaffold(
+      appBar: AppBar(title: Text('Images')),
+      body: Center(
+        child: Image(image: AssetImage('assets/imagem_flutter_G.png')),
+      ),
+    );
   }
 }
