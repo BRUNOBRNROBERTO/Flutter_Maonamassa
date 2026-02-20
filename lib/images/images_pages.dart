@@ -8,7 +8,28 @@ class ImagesPages extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Images')),
       body: Center(
-        child: Image(image: AssetImage('assets/imagem_flutter_G.png')),
+        child: Column(
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/imagem.jpg')),
+              ),
+              child: Text('imagem'),
+              // fit: BoxFit.cover),
+            ),
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.red,
+              child: Image.asset(
+                'assets/imagem_flutter_P.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
