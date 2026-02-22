@@ -11,12 +11,20 @@ class ImagesPages extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: 200,
-              height: 200,
+              width: 300,
+              height: 250,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage('assets/imagem.jpg')),
+                image: DecorationImage(
+                  image: AssetImage('assets/imagem.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
-              child: Text('imagem'),
+              child: Center(
+                child: Text(
+                  'imagem',
+                  style: TextStyle(backgroundColor: Colors.white, fontSize: 20),
+                ),
+              ),
               // fit: BoxFit.cover),
             ),
             Container(
