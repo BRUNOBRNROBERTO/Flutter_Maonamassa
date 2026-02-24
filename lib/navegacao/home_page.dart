@@ -1,13 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_maonamassa/navegacao/page2.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
-      body: Container(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    settings: RouteSettings(name: 'page2'),
+                    builder: (context) => Page2(),
+                  ),
+                );
+              },
+              child: Text('Page2 Via PAGE'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(Page2.routeName);
+              },
+              child: Text('Page2 Via Named'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
