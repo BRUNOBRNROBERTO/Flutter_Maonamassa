@@ -14,12 +14,20 @@ class Page4 extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
+                // Navigator.of(context).pushAndRemoveUntil(
+                // MaterialPageRoute(
+                // settings: RouteSettings(name: 'page1'),
+                //  builder: (context) => Page1(),
+                //  ),
+                // ModalRoute.withName('page2'),
+                //  );
+                // Removendo todas as paginas
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                     settings: RouteSettings(name: 'page1'),
                     builder: (context) => Page1(),
                   ),
-                  ModalRoute.withName('page2'),
+                  (route) => route.isFirst,
                 );
               },
               child: Text('Page1 Via PAGE'),
@@ -34,7 +42,7 @@ class Page4 extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamedAndRemoveUntil(
                   '/page1',
-                  ModalRoute.withName('/page'),
+                  ModalRoute.withName('/page2'),
                 );
               },
               child: Text('Page3 Via Named'),
